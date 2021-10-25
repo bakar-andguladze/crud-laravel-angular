@@ -9,6 +9,7 @@ import { UsersListComponent } from './modules/users/pages/users-list.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { UserService } from './core/services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    // FormsModule, 
+    ReactiveFormsModule
+
     // SharedModule,
   ],
   providers: [UserService],

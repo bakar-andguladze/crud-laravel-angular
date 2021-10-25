@@ -4,4 +4,3 @@ export interface UserModelDto {
     lastname: string;
     email: number;
 }
-  
