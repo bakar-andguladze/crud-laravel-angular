@@ -1,9 +1,18 @@
 <div>
-    <ul>
-        <li *ngFor="let user of users">
-            <span>
-                {{user.firstname}} {{user.lastname}}
-            </span>
-        </li>
-    </ul>
+    <table>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.firstname}}</td>
+            <td>{{user.lastname}}</td>
+            <td>{{user.email}}</td>
+            <td>
+                <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
+                <button (click)="onDelete(user.id)" class="btn btn-sm btn-danger btn-delete-user">delete</button>
+            </td>
+        </tr>
+    </table>
 </div>

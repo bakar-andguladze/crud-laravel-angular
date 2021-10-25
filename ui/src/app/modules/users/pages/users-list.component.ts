@@ -25,5 +25,12 @@ export class UsersListComponent implements OnInit {
       .subscribe(users => { this.users = users; });
   }
 
+  onDelete(id: string) {
+    const user = this.users.find(x => x.id === id);
+    if (!user) return;
+    this.userService.deleteUser(id)
+        .pipe(first())
+        .subscribe(() => this.users = this.users.filter(x => x.id !== id));
+  }
 
 }
