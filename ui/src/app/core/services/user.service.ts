@@ -11,6 +11,8 @@ export class UserService {
 
   users = [];
 
+  public userToEdit = null;
+
   constructor(private http: HttpClient) {}
 
   getUsers() {

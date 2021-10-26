@@ -35,6 +35,11 @@ export class AddEditUserComponent implements OnInit {
     });
     this.isAddMode = !this.id;
 
+    if (!this.isAddMode) {
+      this.userService.getById(this.id)
+          .pipe(first())
+          .subscribe(x => this.form.patchValue(x));
+    }
   }
 
   onSubmit() {
