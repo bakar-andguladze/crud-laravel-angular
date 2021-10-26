@@ -1,14 +1,19 @@
-<h1 *ngIf="isAddMode">Add User</h1>
-<h1 *ngIf="!isAddMode">Edit User</h1>
+<div class="form-row">
+  <div class="center">
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <label for="fname">First name:</label><br>
-  <input type="text" id="fname" name="firstname" formControlName="firstname"><br>
-  <label for="lname">Last name:</label><br>
-  <input type="text" id="lname" name="lastname" formControlName="lastname"><br>
-  <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email" formControlName="email"><br><br>
-  <input type="submit" value="Submit">
-  <a routerLink="/" class="btn btn-link">Cancel</a>
-</form> 
+    <h1 *ngIf="isAddMode">Add User</h1>
+    <h1 *ngIf="!isAddMode">Edit User</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="firstname" formControlName="firstname" class="size"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lastname" formControlName="lastname" class="size"><br>
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email" formControlName="email" class="size"><br><br>
+      <input type="submit" value="Submit" class="btn btn-primary">
+      <a routerLink="/" class="btn btn-link">Cancel</a>
+    </form> 
+  </div>
+</div>
   
