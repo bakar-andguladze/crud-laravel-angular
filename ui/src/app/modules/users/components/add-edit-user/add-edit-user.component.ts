@@ -53,10 +53,11 @@ export class AddEditUserComponent implements OnInit {
 
   private createUser() {
     console.log(this.form.value);
-    this.userService.createUser(this.form.value)
-    .pipe(first())
-    .subscribe(() => {
+    this.userService.createUser(this.form.value).subscribe(() => {
       this.router.navigate(['../'], { relativeTo: this.route });
+    },
+    error => {
+      console.log(error);
     });
 
   }

@@ -13,16 +13,19 @@ use App\Http\Controllers\UserController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::group(['prefix'=>'users'], function(){
+    Route::get('{id}', [UserController::class, 'show']);
 
-Route::get('/users/{id}', [UserController::class, 'show']);
+    Route::get('/', [UserController::class, 'index']);
 
-Route::get('/users', [UserController::class, 'index']);
+    Route::post('/', [UserController::class, 'store']);
 
-Route::post('/users', [UserController::class, 'store']);
+    Route::put('{id}', [UserController::class, 'update']);
 
-Route::put('/users/{id}', [UserController::class, 'update']);
+    Route::delete('{id}', [UserController::class, 'destroy']);
 
-Route::delete('/users/{id}', [UserController::class, 'destroy']);
+});
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
